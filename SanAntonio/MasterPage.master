@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="FlashControl" Namespace="Bewise.Web.UI.WebControls" TagPrefix="Bewise" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            height: 141px;
+        }
+        .auto-style2 {
+            width: 450px;
+            height: 141px;
+        }
+    </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="header">
+                
+                <table class="auto-style1" style="width: 100%">
+                    <tr>
+                        <td class="auto-style1">
+                            <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" ImageUrl="~/Images/brand.png" PostBackUrl="~/Default.aspx" />
+                        </td>
+                        <td class="auto-style2">
+
+                            <asp:Menu ID="Menu1" runat="server" ForeColor="#666666" Orientation="Horizontal" StaticSubMenuIndent="16px">
+                                <Items>
+                                    <asp:MenuItem Text="Home |" Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Products |" Value="Products" NavigateUrl="~/Products.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Supports |" Value="Supports" NavigateUrl="~/Support.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="About Us |" Value="About Us" NavigateUrl="~/About.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+
+                            <br />
+
+                            <asp:Menu ID="Menu2" runat="server" Font-Size="X-Small" ForeColor="#666666" Orientation="Horizontal" StaticSubMenuIndent="16px" style="font-size: small">
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/Member/Default.aspx" Text="Member Home |" Value="Member Home"></asp:MenuItem>
+                                    <asp:MenuItem Text="Edit Profile |" Value="Edit Profile" NavigateUrl="~/Member/EditProfile.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="View Cart |" Value="View Cart" NavigateUrl="~/Member/ViewCart.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Make Payment |" Value="Make Payment" NavigateUrl="~/Member/ViewCart.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="View History" Value="View History" NavigateUrl="~/Member/ViewHistory.aspx"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                            <asp:Menu ID="Menu3" runat="server" Font-Size="X-Small" ForeColor="#666666" Orientation="Horizontal" StaticSubMenuIndent="16px" style="font-size: small">
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Admin Home |" Value="Admin Home"></asp:MenuItem>
+                                    <asp:MenuItem Text="Manage Products |" Value="Manage Products" NavigateUrl="~/Admin/ManageProducts.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Manage Users |" Value="Manage Users" NavigateUrl="~/Admin/ManageUsers.aspx"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Admin/ViewTransaction.aspx" Text="View Transaction" Value="View Transaction"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                        </td>
+                        <td style="text-align: right" class="auto-style1"><span class="auto-style4">Welcome,
+                        </span>
+                            <asp:Label ID="Label1" runat="server" Text="Guest" ForeColor="#666666"></asp:Label>
+                            <br />
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" PostBackUrl="~/Login.aspx" Font-Bold="False" Font-Italic="False" Font-Overline="False" ForeColor="#666666" Font-Underline="False">Login |</asp:LinkButton>
+                            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" PostBackUrl="~/Register.aspx" Font-Underline="False" ForeColor="#666666">Register</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" OnClick="LinkButton3_Click" Font-Underline="False" ForeColor="#666666">Logout |</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" Font-Underline="False" ForeColor="#666666" PostBackUrl="~/Member/ChangePWD.aspx">Change Password</asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <div id="contentArea">
+                <div id="pageTitle">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- hr style="color: #000000" /-->
+                <br />
+                <div id="article">
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+            </div>
+            <br />
+            <div id="footer">
+                <div id="footer-banner">
+                    </div>
+                <br />
+                <table class="auto-style1" style="height: 150px; background-color: #f2eeee; width: 100%;">
+                    <tr>
+                        <td style="width: 33%; vertical-align: middle; text-align: center; font-size: large;">
+                            Our Mission</td>
+                        <td style="width: 33%; vertical-align: middle; text-align: center; font-size: large;">
+                            Quality Guarantee</td>
+                        <td style="width: 33%; vertical-align: middle; text-align: center; font-size: large;">
+                            Sizes and Width</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 33%; font-size: small; text-align: center; vertical-align: top;" class="auto-style11">
+                                        To provide you such outstanding value, service, and of course comfort that we may be worthy of your repeat business and good word of mouth.
+                                    </td>
+                        <td style="width: 33%; font-size: small; text-align: center; vertical-align: top;" class="auto-style12">
+                            <span class="auto-style11">Our commitment is to quality, fit, and comfort. We guarantee our products from manufacturer defects.</span>
+                        </td>
+                        <td style="width: 33%; font-size: small; text-align: center; vertical-align: top;">
+                            <span class="auto-style11">SAS offers the widest ranges of sizes and widths of any brand (88 for women and 104 for men).</span>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <br class="auto-style11" />
+                <span class="auto-style11">Created by Yuni Hafsari, 2017</span><br class="auto-style11" />
+                <span class="auto-style11">All Right Reserved
+                <br />
+                <br />
+                </span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
